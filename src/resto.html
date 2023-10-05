@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Restoran Tikus</title>
+      <link href="../dist/output.css" rel="stylesheet">
+   </head>
+
+   <body>
+      <!-- Navbar -->
+      <nav class="bg-gray-900 text-white py-4">
+         <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-semibold">Restoran Tikus</a>
+            <ul class="flex space-x-4">
+               <li><a href="#" class="hover:text-gray-400">Beranda</a></li>
+               <li><a href="#" class="hover:text-gray-400">Menu</a></li>
+               <li><a href="#" class="hover:text-gray-400">Kontak</a></li>
+            </ul>
+         </div>
+      </nav>
+
+      <!-- Slider -->
+      <div class="bg-cover bg-center h-80 relative"
+         style="background-image: url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80');">
+         <div class="absolute inset-0 bg-black opacity-50"></div>
+         <div class="container mx-auto h-80 flex flex-col justify-center items-center relative z-10">
+            <h1 class="text-4xl sm:text-5xl font-semibold text-white text-center">Selamat Datang di Restoran Tikus</h1>
+            <p class="text-lg text-white mt-4 text-center">Nikmati hidangan lezat kami dengan berbagai pilihan menu.</p>
+         </div>
+      </div>
+
+      <!-- Menu -->
+      <section class="py-16">
+         <div class="container mx-auto">
+            <h2 class="text-3xl font-semibold mb-8 text-center">Menu Kami</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+               <!-- Card Menu -->
+               <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Menu Item" class="w-full h-50 object-cover">
+                  <div class="p-4">
+                     <h3 class="text-xl font-semibold">Menu 1</h3>
+                     <p class="text-gray-600">Deskripsi menu yang sangat lezat.</p>
+                     <p class="text-gray-800 mt-2">$12.99</p>
+                  </div>
+               </div>
+
+               <!-- Card Menu -->
+               <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Menu Item" class="w-full h-50 object-cover">
+                  <div class="p-4">
+                     <h3 class="text-xl font-semibold">Menu 2</h3>
+                     <p class="text-gray-600">Deskripsi menu yang sangat lezat.</p>
+                     <p class="text-gray-800 mt-2">$9.99</p>
+                  </div>
+               </div>
+
+               <!-- Card Menu -->
+               <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Menu Item" class="w-full h-50 object-cover">
+                  <div class="p-4">
+                     <h3 class="text-xl font-semibold">Menu 3</h3>
+                     <p class="text-gray-600">Deskripsi menu yang sangat lezat.</p>
+                     <p class="text-gray-800 mt-2">$15.99</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!-- Jam Buka -->
+      <section class="bg-gray-100 py-16">
+         <div class="container mx-auto">
+            <h2 class="text-3xl font-semibold mb-8 text-center">Jam Buka Kami</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+               <div class="bg-white rounded-lg shadow-md p-6">
+                  <h3 class="text-xl font-semibold mb-2">Senin - Jumat</h3>
+                  <p class="text-gray-600">08:00 AM - 10:00 PM</p>
+               </div>
+               <div class="bg-white rounded-lg shadow-md p-6">
+                  <h3 class="text-xl font-semibold mb-2">Sabtu - Minggu</h3>
+                  <p class="text-gray-600">10:00 AM - 10:00 PM</p>
+               </div>
+            </div>
+         </div>
+      </section>
+
+   </body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Landing Page Aplikasi</title>
+      <link href="../dist/output.css" rel="stylesheet">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+      <style>
+         @keyframes float {
+            0% {
+               transform: translateY(0);
+            }
+
+            50% {
+               transform: translateY(-10px);
+            }
+
+            100% {
+               transform: translateY(0);
+            }
+         }
+
+         .floating {
+            animation: float 2s infinite;
+         }
+      </style>
+   </head>
+
+   <body class="bg-gray-100">
+      <!-- Bagian Hero -->
+      <section class="bg-blue-600 text-white py-16">
+         <div class="container mx-auto text-center">
+            <h1 class="text-4xl sm:text-5xl font-semibold mb-4">Selamat Datang di Aplikasi Kami</h1>
+            <p class="text-lg sm:text-xl mb-8">Aplikasi hebat yang akan memudahkan hidup Anda.</p>
+            <div class="space-y-4 sm:space-y-0">
+               <a href="#"
+                  class="bg-white text-blue-600 py-3 px-6 rounded-full hover:bg-blue-200 hover:shadow-lg transition duration-300 ease-in-out inline-block floating">
+                  <i class="fas fa-download mr-2"></i> Unduh di Google Play
+               </a>
+               <a href="#"
+                  class="bg-white text-blue-600 py-3 px-6 rounded-full hover:bg-blue-200 hover:shadow-lg transition duration-300 ease-in-out inline-block floating">
+                  <i class="fas fa-download mr-2"></i> Unduh di Apple Store
+               </a>
+            </div>
+         </div>
+      </section>
+
+      <!-- Bagian Deskripsi -->
+      <section class="py-16">
+         <div class="container mx-auto text-center">
+            <h2 class="text-2xl sm:text-3xl font-semibold mb-4">Kenapa Memilih Aplikasi Kami?</h2>
+            <p class="text-gray-700 text-lg sm:text-xl mb-8">Deskripsi singkat tentang keunggulan aplikasi Anda dan
+               alasan mengapa orang harus mengunduhnya.</p>
+         </div>
+      </section>
+
+      <!-- Bagian Tombol Unduh -->
+      <section class="bg-gray-100 py-16">
+         <div class="container mx-auto text-center">
+            <h2 class="text-2xl sm:text-3xl font-semibold mb-4">Unduh Sekarang!</h2>
+            <div class="space-y-4 sm:space-x-4 sm:space-y-0">
+               <a href="#"
+                  class="bg-blue-500 text-white py-3 px-6 rounded-full hover:bg-blue-600 hover:shadow-lg transition duration-300 ease-in-out inline-block floating">
+                  <i class="fab fa-google-play mr-2"></i> Google Play
+               </a>
+               <a href="#"
+                  class="bg-blue-500 text-white py-3 px-6 rounded-full hover:bg-blue-600 hover:shadow-lg transition duration-300 ease-in-out inline-block floating">
+                  <i class="fab fa-apple mr-2"></i> Apple Store
+               </a>
+               <a href="#"
+                  class="bg-blue-500 text-white py-3 px-6 rounded-full hover:bg-blue-600 hover:shadow-lg transition duration-300 ease-in-out inline-block floating">
+                  <i class="fab fa-windows mr-2"></i> Windows
+               </a>
+               <a href="#"
+                  class="bg-blue-500 text-white py-3 px-6 rounded-full hover:bg-blue-600 hover:shadow-lg transition duration-300 ease-in-out inline-block floating">
+                  <i class="fab fa-linux mr-2"></i> Linux
+               </a>
+               <a href="#"
+                  class="bg-blue-500 text-white py-3 px-6 rounded-full hover:bg-blue-600 hover:shadow-lg transition duration-300 ease-in-out inline-block floating">
+                  <i class="fab fa-apple mr-2"></i> macOS
+               </a>
+            </div>
+         </div>
+      </section>
+   </body>
+
+</html>

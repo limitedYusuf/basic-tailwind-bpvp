@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Daftar Tugas</title>
+      <link href="../dist/output.css" rel="stylesheet">
+   </head>
+
+   <body class="bg-gray-100">
+      <div class="container mx-auto p-4">
+         <h1 class="text-2xl font-semibold mb-4">Daftar Tugas</h1>
+
+         <div class="mb-4 flex">
+            <input type="text" class="w-full p-2 border rounded" placeholder="Tambahkan tugas..." id="taskInput" />
+            <button class="bg-blue-500 text-white px-4 py-2 ml-2 rounded hover:bg-blue-600" id="addTaskButton">
+               Tambah
+            </button>
+         </div>
+
+         <div class="mt-4 grid grid-cols-3 gap-4">
+            <div class="bg-white p-4 rounded-lg shadow-md text-center">
+               <h2 class="text-lg font-semibold mb-2">Proses</h2>
+               <div id="prosesTasks" class="mt-2">
+               </div>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md text-center">
+               <h2 class="text-lg font-semibold mb-2">Batal</h2>
+               <div id="batalTasks" class="mt-2">
+               </div>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md text-center">
+               <h2 class="text-lg font-semibold mb-2">Selesai</h2>
+               <div id="selesaiTasks" class="mt-2">
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <script>
+         document.addEventListener("DOMContentLoaded", function () {
+            const taskInput = document.getElementById("taskInput");
+            const addTaskButton = document.getElementById("addTaskButton");
+
+            const prosesTasks = document.getElementById("prosesTasks");
+            const batalTasks = document.getElementById("batalTasks");
+            const selesaiTasks = document.getElementById("selesaiTasks");
+
+            addTaskButton.addEventListener("click", function () {
+               const taskText = taskInput.value.trim();
+
+               if (taskText) {
+                  const taskItem = document.createElement("li");
+                  taskItem.classList.add(
+                     "mt-2",
+                     "py-1",
+                     "flex",
+                     "justify-between",
+                     "items-center",
+                     "bg-white",
+                     "rounded"
+                  );
+
+                  const checkbox = document.createElement("input");
+                  checkbox.type = "checkbox";
+                  checkbox.classList.add("form-checkbox", "text-blue-500");
+                  taskItem.appendChild(checkbox);
+
+                  const taskTextElement = document.createElement("span");
+                  taskTextElement.textContent = taskText;
+                  taskItem.appendChild(taskTextElement);
+
+                  const deleteButton = document.createElement("button");
+                  deleteButton.textContent = "Hapus";
+                  deleteButton.classList.add(
+                     "bg-red-500",
+                     "text-white",
+                     "px-2",
+                     "py-1",
+                     "rounded",
+                     "hover:bg-red-600"
+                  );
+                  deleteButton.addEventListener("click", function () {
+                     taskItem.remove();
+                  });
+
+                  const cancelButton = document.createElement("button");
+                  cancelButton.textContent = "Batal";
+                  cancelButton.classList.add(
+                     "bg-yellow-500",
+                     "text-white",
+                     "px-2",
+                     "py-1",
+                     "rounded",
+                     "hover:bg-yellow-600"
+                  );
+                  cancelButton.addEventListener("click", function () {
+                     // Pindahkan tugas ke "Batal"
+                     batalTasks.appendChild(taskItem);
+                     cancelButton.style.display = "none";
+                     completeButton.style.display = "none";
+                     taskTextElement.style.textDecoration = "none";
+                  });
+
+                  const completeButton = document.createElement("button");
+                  completeButton.textContent = "Selesai";
+                  completeButton.classList.add(
+                     "bg-green-500",
+                     "text-white",
+                     "px-2",
+                     "py-1",
+                     "rounded",
+                     "hover:bg-green-600"
+                  );
+                  completeButton.style.display = "none";
+                  completeButton.addEventListener("click", function () {
+                     selesaiTasks.appendChild(taskItem);
+                     cancelButton.style.display = "none";
+                     completeButton.style.display = "none";
+                     taskTextElement.style.textDecoration = "line-through";
+                  });
+
+                  checkbox.addEventListener("change", function () {
+                     if (checkbox.checked) {
+                        selesaiTasks.appendChild(taskItem);
+                        cancelButton.style.display = "none";
+                        completeButton.style.display = "none";
+                        taskTextElement.style.textDecoration = "line-through";
+                     } else {
+                        prosesTasks.appendChild(taskItem);
+                        completeButton.style.display = "none";
+                        cancelButton.style.display = "inline-block";
+                        taskTextElement.style.textDecoration = "none";
+                     }
+                  });
+
+                  const buttonContainer = document.createElement("div");
+                  buttonContainer.classList.add("space-x-2");
+                  buttonContainer.appendChild(cancelButton);
+                  buttonContainer.appendChild(completeButton);
+                  buttonContainer.appendChild(deleteButton);
+                  taskItem.appendChild(buttonContainer);
+
+                  prosesTasks.appendChild(taskItem);
+
+                  taskInput.value = "";
+               }
+            });
+         });
+      </script>
+   </body>
+
+</html>

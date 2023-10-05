@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Kartu Nama</title>
+      <link href="../dist/output.css" rel="stylesheet">
+   </head>
+
+   <body class="bg-gray-100">
+      <div class="container mx-auto p-4">
+         <div class="max-w-3xl mx-auto bg-white p-4 rounded-lg shadow-md">
+            <h1 class="text-2xl font-semibold mb-4">Kartu Nama</h1>
+
+            <form id="cardGeneratorForm">
+               <div class="grid grid-cols-2 gap-4">
+                  <div class="mb-4">
+                     <label for="nama" class="block text-sm font-medium text-gray-700">Nama:</label>
+                     <input type="text" id="nama" name="nama" class="mt-1 p-2 w-full border rounded"
+                        placeholder="Yusuf Limited" value="Yusuf Limited">
+                  </div>
+
+                  <div class="mb-4">
+                     <label for="jabatan" class="block text-sm font-medium text-gray-700">Jabatan:</label>
+                     <input type="text" id="jabatan" name="jabatan" class="mt-1 p-2 w-full border rounded"
+                        placeholder="Front-end Developer" value="Front-end Developer">
+                  </div>
+
+                  <div class="mb-4">
+                     <label for="email" class="block text-sm font-medium text-gray-700">Email:</label>
+                     <input type="email" id="email" name="email" class="mt-1 p-2 w-full border rounded"
+                        placeholder="yusuf@example.com" value="yusuf@example.com">
+                  </div>
+
+                  <div class="mb-4">
+                     <label for="telepon" class="block text-sm font-medium text-gray-700">Telepon:</label>
+                     <input type="tel" id="telepon" name="telepon" class="mt-1 p-2 w-full border rounded"
+                        placeholder="(123) 456-7890" value="(123) 456-7890">
+                  </div>
+
+                  <div class="mb-4">
+                     <label for="website" class="block text-sm font-medium text-gray-700">Website:</label>
+                     <input type="url" id="website" name="website" class="mt-1 p-2 w-full border rounded"
+                        placeholder="https://example.com" value="https://example.com">
+                  </div>
+
+                  <div class="mb-4">
+                     <label for="linkedin" class="block text-sm font-medium text-gray-700">LinkedIn:</label>
+                     <input type="url" id="linkedin" name="linkedin" class="mt-1 p-2 w-full border rounded"
+                        placeholder="https://www.linkedin.com/in/yusuf" value="https://www.linkedin.com/in/yusuf">
+                  </div>
+
+                  <div class="mb-4">
+                     <label for="twitter" class="block text-sm font-medium text-gray-700">Twitter:</label>
+                     <input type="url" id="twitter" name="twitter" class="mt-1 p-2 w-full border rounded"
+                        placeholder="https://twitter.com/yusuf" value="https://twitter.com/yusuf">
+                  </div>
+
+                  <div class="mb-4">
+                     <label for="gambarProfil" class="block text-sm font-medium text-gray-700">Gambar Profil:</label>
+                     <input type="file" id="gambarProfil" name="gambarProfil" accept="image/*"
+                        class="mt-1 p-2 w-full border rounded">
+                  </div>
+               </div>
+
+               <button type="submit"
+                  class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Generate</button>
+            </form>
+         </div>
+      </div>
+
+<div class="max-w-md mx-auto bg-white p-4 rounded-lg shadow-md" style="display: none;" id="generatedCard">
+   <div class="mt-6">
+      <!-- Generated card content will be inserted here -->
+   </div>
+   <div class="mt-4">
+      <!-- Download button for the generated card -->
+      <a href="#" id="downloadButton" download="kartu_nama.png"
+         class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Unduh Kartu Nama</a>
+   </div>
+</div>
+</div>
+
+      <script>
+         const cardGeneratorForm = document.getElementById('cardGeneratorForm');
+         const generatedCard = document.getElementById('generatedCard');
+         const gambarProfilInput = document.getElementById('gambarProfil');
+
+         cardGeneratorForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const nama = document.getElementById('nama').value;
+            const jabatan = document.getElementById('jabatan').value;
+            const email = document.getElementById('email').value;
+            const telepon = document.getElementById('telepon').value;
+            const website = document.getElementById('website').value;
+            const linkedin = document.getElementById('linkedin').value;
+            const twitter = document.getElementById('twitter').value;
+
+            const gambarProfil = gambarProfilInput.files[0];
+
+            const gambarProfilURL = URL.createObjectURL(gambarProfil);
+
+            const kartuNamaHTML = `
+                <img src="${gambarProfilURL}" alt="Foto Profil" class="w-32 h-32 rounded-full mx-auto mb-4">
+                <h1 class="text-2xl font-semibold mb-2">${nama}</h1>
+                <p class="text-lg font-semibold">${jabatan}</p>
+                <p class="mt-4"><span class="font-semibold">Email:</span> ${email}</p>
+                <p><span class="font-semibold">Telepon:</span> ${telepon}</p>
+                <div class="mt-4 flex space-x-4">
+                    <a href="${website}" class="text-blue-500 hover:underline">Website</a>
+                    <a href="${linkedin}" class="text-blue-500 hover:underline">LinkedIn</a>
+                    <a href="${twitter}" class="text-blue-500 hover:underline">Twitter</a>
+                </div>
+            `;
+
+            generatedCard.innerHTML = kartuNamaHTML;
+            generatedCard.style.display = 'block';
+         });
+      </script>
+   </body>
+
+</html>

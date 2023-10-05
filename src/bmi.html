@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Kalkulator BMI</title>
+      <link href="../dist/output.css" rel="stylesheet">
+   </head>
+
+   <body class="bg-gray-100">
+      <div class="container mx-auto p-4">
+         <h1 class="text-2xl font-semibold mb-4">Kalkulator BMI</h1>
+
+         <!-- Formulir Input -->
+         <div class="bg-white p-4 rounded-lg shadow-md">
+            <label class="block mb-2 font-semibold" for="weight">Berat (kg)</label>
+            <input type="number" class="w-full p-2 border rounded" id="weight" placeholder="Masukkan berat Anda" />
+
+            <label class="block mt-4 mb-2 font-semibold" for="height">Tinggi (cm)</label>
+            <input type="number" class="w-full p-2 border rounded" id="height" placeholder="Masukkan tinggi Anda" />
+
+            <button class="bg-blue-500 text-white px-4 py-2 mt-4 rounded hover:bg-blue-600" id="calculateButton">
+               Hitung BMI
+            </button>
+         </div>
+
+         <!-- Hasil Kalkulasi -->
+         <div class="mt-4 bg-white p-4 rounded-lg shadow-md" id="resultContainer" style="display: none;">
+            <h2 class="text-lg font-semibold mb-2">Hasil Kalkulasi BMI</h2>
+            <p class="font-semibold">BMI Anda:</p>
+            <p id="bmiResult" class="text-2xl font-bold mt-2"></p>
+            <p class="font-semibold">Kategori BMI:</p>
+            <p id="bmiCategory" class="mt-2"></p>
+         </div>
+      </div>
+
+      <script>
+         document.addEventListener("DOMContentLoaded", function () {
+            const weightInput = document.getElementById("weight");
+            const heightInput = document.getElementById("height");
+            const calculateButton = document.getElementById("calculateButton");
+            const resultContainer = document.getElementById("resultContainer");
+            const bmiResult = document.getElementById("bmiResult");
+            const bmiCategory = document.getElementById("bmiCategory");
+
+            calculateButton.addEventListener("click", function () {
+               const weight = parseFloat(weightInput.value);
+               const height = parseFloat(heightInput.value) / 100; // Konversi cm ke meter
+
+               if (isNaN(weight) || isNaN(height) || height <= 0 || weight <= 0) {
+                  alert("Masukkan berat dan tinggi yang valid.");
+                  return;
+               }
+
+               const bmi = weight / (height * height);
+               const bmiRounded = bmi.toFixed(2);
+
+               let category = "";
+               if (bmi < 18.5) {
+                  category = "Kurus";
+               } else if (bmi >= 18.5 && bmi < 24.9) {
+                  category = "Normal";
+               } else if (bmi >= 24.9 && bmi < 29.9) {
+                  category = "Gemuk";
+               } else {
+                  category = "Obesitas";
+               }
+
+               bmiResult.textContent = bmiRounded;
+               bmiCategory.textContent = category;
+               resultContainer.style.display = "block";
+            });
+         });
+      </script>
+   </body>
+
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <link href="../dist/compile.css" rel="stylesheet">
+      <style>
+         .text-custom-red {
+            color: #ff0000;
+         }
+
+         .bg-custom-yellow {
+            background-color: #ffff00;
+         }
+
+         @keyframes bounce {
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+               transform: translateY(0);
+            }
+
+            40% {
+               transform: translateY(-30px);
+            }
+
+            60% {
+               transform: translateY(-15px);
+            }
+         }
+
+         .infinite-bounce {
+            animation: bounce 2s infinite;
+         }
+      </style>
+   </head>
+
+   <body>
+      <div class="text-blue-500 bg-gray-200 p-4 m-2 text-xl">
+         <!-- 
+      - 'text-blue-500': Mengatur warna teks menjadi biru (#4299e1). 
+      - 'bg-gray-200': Mengatur latar belakang elemen menjadi abu-abu (#edf2f7). 
+      - 'p-4': Menambahkan padding sekitar elemen sebesar 1rem (16 piksel) ke semua sisi.
+      - 'm-2': Menambahkan margin sekitar elemen sebesar 0.5rem (8 piksel) ke semua sisi.
+      - 'text-xl': Mengatur ukuran font teks menjadi besar (1.25rem atau 20 piksel). 
+      -->
+         Ini adalah contoh teks dengan font ukuran besar dan gaya dasar lainnya.
+      </div>
+
+      <h1 class="text-3xl font-bold underline">
+         <!-- 
+      - 'text-3xl': Mengatur ukuran font teks menjadi sangat besar (2rem atau 32 piksel).
+      - 'font-bold': Mengatur teks menjadi tebal (bold).
+      - 'underline': Mengatur teks untuk memiliki garis bawah.
+      -->
+         Hello world!
+      </h1>
+
+      <!-- Blok 1: Container dengan 2 Kolom -->
+      <div class="container mx-auto">
+         <!-- Membuat grid dengan 2 kolom menggunakan "grid-cols-2" -->
+         <div class="grid grid-cols-2">
+            <!-- Kolom pertama -->
+            <div>
+               Isi kolom 1
+            </div>
+
+            <!-- Kolom kedua -->
+            <div>
+               Isi kolom 2
+            </div>
+         </div>
+      </div>
+      <!-- Info
+            - ".container mx-auto": Membuat kontainer dengan lebar maksimum yang ditengah-tengahkan secara horizontal.
+            - ".grid grid-cols-2": Membuat grid dengan 2 kolom.
+      -->
+
+      <!-- Blok 2: Container dengan 3 Kolom, dengan Spasi Antar Kolom -->
+      <div class="container mx-auto">
+         <!-- Membuat grid dengan 3 kolom dan ruang antar kolom sebesar 4 menggunakan "grid-cols-3" dan "gap-4" -->
+         <div class="grid grid-cols-3 gap-4">
+            <!-- Kolom pertama yang mengambil 2 dari 3 kolom -->
+            <div class="col-span-2">
+               Isi kolom 1
+            </div>
+
+            <!-- Kolom kedua yang mengambil 1 dari 3 kolom -->
+            <div class="col-span-1">
+               Isi kolom 2
+            </div>
+         </div>
+      </div>
+      <!-- Info
+            - ".container mx-auto": Membuat kontainer dengan lebar maksimum yang ditengah-tengahkan secara horizontal.
+            - ".grid grid-cols-3": Membuat grid dengan 3 kolom.
+            - "gap-4": Memberikan jarak sebesar 1rem (16 piksel) antara elemen-elemen dalam grid.
+            - "col-span-2": Membuat kolom pertama mengambil 2 dari 3 kolom yang tersedia.
+            - "col-span-1": Membuat kolom kedua mengambil 1 dari 3 kolom yang tersedia.
+      -->
+
+      <div class="bg-gray-100 p-6">
+         <div class="flex flex-wrap gap-4">
+            <!-- Tombol Default -->
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+               Tombol Default
+            </button>
+            <!-- Info
+            - 'bg-blue-500': Mengatur latar belakang elemen dengan warna biru (#3b82f6).
+            - 'hover:bg-blue-700': Mengubah latar belakang elemen menjadi biru tua (#1d4ed8) saat kursor berada di atas tombol.
+            - 'text-white': Mengatur warna teks menjadi putih.
+            - 'font-bold': Mengatur teks menjadi tebal (bold).
+            - 'py-2': Menambahkan padding atas dan bawah sebesar 0.5rem (8 piksel).
+            - 'px-4': Menambahkan padding kanan dan kiri sebesar 1rem (16 piksel).
+            - 'rounded': Memberikan sudut elemen yang sedikit melengkung.
+            -->
+
+            <!-- Tombol Primary -->
+            <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+               Tombol Primary
+            </button>
+
+            <!-- Tombol Sekunder -->
+            <button class="bg-gray-300 hover:bg-gray-500 text-gray-800 font-bold py-2 px-4 rounded">
+               Tombol Sekunder
+            </button>
+
+            <!-- Tombol Danger -->
+            <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+               Tombol Danger
+            </button>
+
+            <!-- Tombol Info -->
+            <button class="bg-blue-300 hover:bg-blue-500 text-blue-800 font-bold py-2 px-4 rounded">
+               Tombol Info
+            </button>
+
+            <!-- Tombol Sukses -->
+            <button class="bg-green-300 hover:bg-green-500 text-green-800 font-bold py-2 px-4 rounded">
+               Tombol Sukses
+            </button>
+
+            <!-- Tombol Warning -->
+            <button class="bg-yellow-400 hover:bg-yellow-600 text-yellow-900 font-bold py-2 px-4 rounded">
+               Tombol Warning
+            </button>
+
+            <!-- Tombol Besar -->
+            <button class="bg-purple-500 hover:bg-purple-700 text-white font-bold py-4 px-6 rounded-lg">
+               Tombol Besar
+            </button>
+
+            <!-- Tombol Kecil -->
+            <button class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-1 px-2 rounded-sm">
+               Tombol Kecil
+            </button>
+         </div>
+      </div>
+
+      <div class="bg-lime-100 p-6">
+         <!-- Container latar belakang dan padding -->
+         <div class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-lg">
+            <!-- Judul Formulir -->
+            <h1 class="text-2xl font-bold mb-4">Formulir Gejala Flu</h1>
+            <form>
+               <!-- Elemen Input Nama -->
+               <div class="mb-4">
+                  <!-- Label Nama -->
+                  <label for="nama" class="block text-gray-700 font-bold mb-2">Nama:</label>
+                  <!-- Input Nama -->
+                  <input type="text" id="nama" name="nama"
+                     class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+                     placeholder="Masukkan nama Anda" required>
+                  <!-- Info
+                  - 'w-full': Mengatur lebar elemen menjadi 100% dari lebar yang tersedia.
+                  - 'px-3': Menambahkan padding horizontal sebesar 0.75rem (12 piksel) ke elemen.
+                  - 'py-2': Menambahkan padding vertikal sebesar 0.5rem (8 piksel) ke elemen.
+                  - 'border': Menambahkan garis tepi elemen.
+                  - 'focus:outline-none': Menghapus garis kontur (outline) saat elemen mendapatkan fokus.
+                  - 'focus:border-blue-500': Mengatur warna garis tepi menjadi biru saat elemen mendapatkan fokus.
+                  -->
+               </div>
+
+               <!-- Elemen Select Gejala -->
+               <div class="mb-4">
+                  <!-- Label Gejala -->
+                  <label for="gejala" class="block text-gray-700 font-bold mb-2">Gejala yang Dialami:</label>
+                  <!-- Select Gejala -->
+                  <select id="gejala" name="gejala"
+                     class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500" required>
+                     <option value="" disabled selected>Pilih gejala yang Anda alami</option>
+                     <option value="Demam">Demam</option>
+                     <option value="Batuk">Batuk</option>
+                     <option value="Pilek">Pilek</option>
+                     <option value="Sakit Tenggorokan">Sakit Tenggorokan</option>
+                     <option value="Sesak Napas">Sesak Napas</option>
+                  </select>
+                  <!-- Info
+                  - 'w-full': Mengatur lebar elemen menjadi 100% dari lebar yang tersedia.
+                  - 'px-3': Menambahkan padding horizontal sebesar 0.75rem (12 piksel) ke elemen.
+                  - 'py-2': Menambahkan padding vertikal sebesar 0.5rem (8 piksel) ke elemen.
+                  - 'border': Menambahkan garis tepi elemen.
+                  - 'focus:outline-none': Menghapus garis kontur (outline) saat elemen mendapatkan fokus.
+                  - 'focus:border-blue-500': Mengatur warna garis tepi menjadi biru saat elemen mendapatkan fokus.
+                  -->
+               </div>
+
+               <!-- Elemen Textarea Keterangan -->
+               <div class="mb-4">
+                  <!-- Label Keterangan -->
+                  <label for="keterangan" class="block text-gray-700 font-bold mb-2">Keterangan Tambahan:</label>
+                  <!-- Textarea Keterangan -->
+                  <textarea id="keterangan" name="keterangan"
+                     class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+                     placeholder="Masukkan keterangan tambahan (jika ada)"></textarea>
+                  <!-- Info
+                  - 'w-full': Mengatur lebar elemen menjadi 100% dari lebar yang tersedia.
+                  - 'px-3': Menambahkan padding horizontal sebesar 0.75rem (12 piksel) ke elemen.
+                  - 'py-2': Menambahkan padding vertikal sebesar 0.5rem (8 piksel) ke elemen.
+                  - 'border': Menambahkan garis tepi elemen.
+                  - 'focus:outline-none': Menghapus garis kontur (outline) saat elemen mendapatkan fokus.
+                  - 'focus:border-blue-500': Mengatur warna garis tepi menjadi biru saat elemen mendapatkan fokus.
+                  -->
+               </div>
+
+               <!-- Tombol Submit -->
+               <div class="mb-4">
+                  <!-- Tombol Kirim -->
+                  <button type="submit"
+                     class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline-blue active:bg-blue-800">
+                     Kirim
+                  </button>
+                  <!-- Info
+                  - 'bg-blue-500': Mengatur latar belakang tombol dengan warna biru (#3b82f6).
+                  - 'hover:bg-blue-700': Mengubah latar belakang tombol menjadi biru tua (#1d4ed8) saat kursor berada di atas tombol.
+                  - 'text-white': Mengatur warna teks menjadi putih.
+                  - 'font-bold': Mengatur teks menjadi tebal (bold).
+                  - 'py-2': Menambahkan padding atas dan bawah sebesar 0.5rem (8 piksel) ke tombol.
+                  - 'px-4': Menambahkan padding kanan dan kiri sebesar 1rem (16 piksel) ke tombol.
+                  - 'rounded': Memberikan sudut tombol yang sedikit melengkung.
+                  - 'focus:outline-none': Menghapus garis kontur (outline) saat tombol mendapatkan fokus.
+                  - 'focus:shadow-outline-blue': Menambahkan bayangan saat tombol mendapatkan fokus.
+                  - 'active:bg-blue-800': Mengatur warna latar belakang tombol menjadi biru tua saat tombol sedang aktif (ditekan).
+                  -->
+               </div>
+            </form>
+         </div>
+      </div>
+
+      <!-- Container dengan latar belakang dan padding -->
+      <div class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-lg">
+         <!-- Judul -->
+         <h1 class="text-2xl font-bold mb-4">
+            <!-- Info
+               - 'text-2xl': Mengatur ukuran font teks menjadi sangat besar (1.5rem atau 24 piksel).
+               - 'font-bold': Mengatur teks menjadi tebal (bold).
+               - 'mb-4': Menambahkan margin bawah sebesar 1rem (16 piksel) ke judul.
+               -->
+            Contoh Tipografi dengan Tailwind CSS
+         </h1>
+
+         <!-- Paragraf dengan ukuran font dasar, warna, dan spasi antar baris -->
+         <p class="text-base text-gray-700 leading-relaxed mb-4">
+            <!-- Info
+               - 'text-base': Mengatur ukuran font teks menjadi dasar.
+               - 'text-gray-700': Mengatur warna teks menjadi abu-abu tua (#4b5563).
+               - 'leading-relaxed': Mengatur spasi antar baris menjadi santai.
+               - 'mb-4': Menambahkan margin bawah sebesar 1rem (16 piksel) ke paragraf.
+               -->
+            Ini adalah contoh teks dengan gaya tipografi yang didefinisikan menggunakan Tailwind CSS.
+         </p>
+
+         <!-- Paragraf dengan gaya miring dan garis bawah -->
+         <p class="italic underline text-blue-700">
+            <!-- Info
+               - 'italic': Membuat teks menjadi miring.
+               - 'underline': Memberikan garis bawah pada teks.
+               - 'text-blue-700': Mengatur warna teks menjadi biru tua (#1d4ed8).
+               -->
+            Ini adalah contoh teks dengan gaya miring dan garis bawah.
+         </p>
+
+         <!-- Paragraf dengan huruf besar -->
+         <p class="uppercase">
+            <!-- Info
+               - 'uppercase': Mengubah semua huruf menjadi huruf besar (kapital).
+               -->
+            Ini adalah contoh teks dengan huruf besar (kapital).
+         </p>
+      </div>
+
+      <div class="max-w-md mx-auto p-6">
+         <!-- Tombol dengan Pseudo-Class dan Variants -->
+         <button
+            class="bg-blue-500 hover:bg-blue-700 focus:bg-red-500 active:bg-green-500 text-white font-bold py-2 px-4 rounded-md focus:outline-none">
+            <!-- Info
+               - 'bg-blue-500': Mengatur latar belakang tombol menjadi biru (#3b82f6).
+               - 'hover:bg-blue-700': Mengubah latar belakang menjadi biru tua (#1d4ed8) saat kursor berada di atas tombol.
+               - 'focus:bg-red-500': Mengatur latar belakang menjadi merah (#ef4444) saat tombol mendapatkan fokus.
+               - 'active:bg-green-500': Mengatur latar belakang menjadi hijau (#10b981) saat tombol sedang aktif (ditekan).
+               - 'text-white': Mengatur warna teks menjadi putih.
+               - 'font-bold': Mengatur teks menjadi tebal (bold).
+               - 'py-2': Menambahkan padding atas dan bawah sebesar 0.5rem (8 piksel) ke tombol.
+               - 'px-4': Menambahkan padding kanan dan kiri sebesar 1rem (16 piksel) ke tombol.
+               - 'rounded-md': Memberikan sudut tombol yang sedikit melengkung.
+               - 'focus:outline-none': Menghapus garis kontur (outline) saat tombol mendapatkan fokus.
+               -->
+            Klik Saya
+         </button>
+      </div>
+
+      <div class="max-w-md mx-auto p-6">
+         <!-- Elemen dengan kelas CSS kustom -->
+         <div class="text-custom-red bg-custom-yellow p-4 rounded-md">
+            <!-- Info
+               - 'text-custom-red': Mengubah warna teks menjadi merah (#ff0000) dengan kelas CSS kustom.
+               - 'bg-custom-yellow': Mengubah warna latar belakang menjadi kuning (#ffff00) dengan kelas CSS kustom.
+               - 'p-4': Menambahkan padding sebesar 1rem (16 piksel) ke elemen.
+               - 'rounded-md': Memberikan sudut elemen yang sedikit melengkung.
+               -->
+            Ini adalah elemen dengan gaya kustom menggunakan kelas CSS tambahan.
+         </div>
+      </div>
+
+      <div class="max-w-md mx-auto p-6">
+         <!-- Elemen dengan animasi dari plugin -->
+         <div class="text-center bg-white p-4 rounded-md animate__animated animate__bounce infinite-bounce">
+            <!-- Info
+               - 'text-center': Mengatur teks menjadi rata tengah.
+               - 'bg-white': Mengatur latar belakang menjadi putih.
+               - 'p-4': Menambahkan padding sebesar 1rem (16 piksel) ke elemen.
+               - 'rounded-md': Memberikan sudut elemen yang sedikit melengkung.
+               - 'animate__animated animate__bounce': Menambahkan animasi 'bounce' menggunakan plugin tailwindcss-animations.
+               -->
+            Ini adalah elemen dengan animasi yang ditambahkan melalui plugin Tailwind.
+         </div>
+      </div>
+   </body>
+
+</html>

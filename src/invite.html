@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Undangan Acara</title>
+      <link href="../dist/output.css" rel="stylesheet">
+      <style>
+         body {
+            background: linear-gradient(to bottom right, #0077FF, #00BFFF, #1E90FF, #87CEEB, #B0E0E6);
+            animation: gradientAnimation 10s infinite alternate;
+            background-size: 300% 300%;
+         }
+
+         @keyframes gradientAnimation {
+            0% {
+               background-position: 0% 0%;
+            }
+
+            100% {
+               background-position: 100% 100%;
+            }
+         }
+
+         .animate-infinite {
+            animation: moveHorizontal 2s infinite;
+         }
+
+         @keyframes moveHorizontal {
+            0% {
+               transform: translateX(0);
+            }
+
+            50% {
+               transform: translateX(20px);
+            }
+
+            100% {
+               transform: translateX(0);
+            }
+         }
+      </style>
+   </head>
+
+   <body class="min-h-screen flex justify-center items-center">
+      <div class="bg-white p-8 rounded-lg shadow-md animate-infinite">
+         <h1 class="text-2xl font-semibold mb-4">Undangan Acara</h1>
+
+         <div class="mb-4">
+            <label for="tanggal" class="block text-sm font-medium text-gray-700">Tanggal:</label>
+            <p id="tanggal" class="mt-1 text-lg font-semibold">12 Oktober 2023</p>
+         </div>
+
+         <div class="mb-4">
+            <label for="lokasi" class="block text-sm font-medium text-gray-700">Lokasi:</label>
+            <p id="lokasi" class="mt-1 text-lg font-semibold">Gedung Serbaguna, Jl. Contoh No. 123</p>
+         </div>
+
+         <div class="mb-4">
+            <label for="informasi" class="block text-sm font-medium text-gray-700">Informasi Acara:</label>
+            <p id="informasi" class="mt-1 text-gray-600">Kami mengundang Anda untuk bergabung dalam acara spesial
+               kami. Acara ini akan berlangsung dengan penuh keceriaan dan hiburan. Jangan lewatkan!</p>
+         </div>
+
+         <div class="mt-4">
+            <button onclick="printPage()"
+               class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors">Cetak
+               Undangan</button>
+         </div>
+      </div>
+
+      <script>
+         function printPage() {
+            window.print();
+         }
+      </script>
+   </body>
+
+</html>

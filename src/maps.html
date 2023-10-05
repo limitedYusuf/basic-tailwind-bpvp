@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Testing JSON Covid :v</title>
+      <link href="../dist/output.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+      <style>
+         #map {
+            height: 500px;
+         }
+      </style>
+   </head>
+
+   <body>
+      <div id="app">
+         <div class="container mx-auto mt-3">
+            <h2 class="text-center text-2xl font-semibold">Testing JSON Covid :v</h2>
+            <h4 class="text-center text-lg font-semibold">Tailwind + Vue + Leaflet</h4>
+         </div>
+         <div class="container mx-auto mt-3">
+            <div class="md:flex md:space-x-4">
+               <div :class="[colClassMap]" class="md:w-3/4">
+                  <div id="map"></div>
+               </div>
+               <div :class="[colClassInfo]" class="md:w-1/4 hidden md:block">
+                  <div class="card">
+                     <img id="logo" style="max-height: 300px;" class="card-img-top" alt="Provinsi Logo">
+                     <div class="card-body">
+                        <h5 id="provinsi" class="card-title"></h5>
+                        <ul class="list-group list-group-flush">
+                           <li id="confirmed" class="list-group-item"></li>
+                           <li id="recovered" class="list-group-item"></li>
+                           <li id="deaths" class="list-group-item"></li>
+                           <li id="active" class="list-group-item"></li>
+                           <li id="update" class="list-group-item"></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <script src="https://unpkg.com/vue@2.6.14/dist/vue.js"></script>
+      <script src="https://unpkg.com/axios@0.21.4/dist/axios.min.js"></script>
+      <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+      <script>
+         var app = new Vue({
+            el: '#app',
+            data: {
+               provinceData: [],
+               map: null,
+               showInfo: false
+            },
+            computed: {
+               colClassMap() {
+                  return this.showInfo ? 'md:w-3/4' : 'md:w-full';
+               },
+               colClassInfo() {
+                  return this.showInfo ? 'md:w-1/4' : 'md:hidden';
+               }
+            },
+            mounted() {
+               this.loadProvinceData();
+            },
+            methods: {
+               loadProvinceData() {
+                  axios.get('https://lintangwisesa.github.io/Indonesia-Covid19-Maps/data/provinsi/all.json')
+                     .then(response => {
+                        this.provinceData = response.data;
+                        this.initMap();
+                     })
+                     .catch(error => {
+                        console.error('Error fetching data:', error);
+                     });
+               },
+               initMap() {
+                  this.map = L.map('map').setView([-2.4771838, 96.3731384], 5);
+
+                  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                  }).addTo(this.map);
+
+                  this.provinceData.forEach(province => {
+                     var lat = parseFloat(province.latitude);
+                     var lon = parseFloat(province.longitude);
+
+                     var marker = L.marker([lat, lon]).addTo(this.map);
+
+                     var popupContent = `
+      <div>
+         <h6>${province.Provinsi}</h6>
+         <p>Confirmed: ${province.Confirmed}</p>
+         <p>Recovered: ${province.Recovered}</p>
+         <p>Deaths: ${province.Deaths}</p>
+         <p>Active cases: ${province['Active cases']}</p>
+      </div>
+    `;
+
+                     marker.bindPopup(popupContent);
+
+                     marker.on('click', () => {
+                        this.showInfo = true;
+                        document.getElementById('logo').src = province.logo;
+                        document.getElementById('provinsi').textContent = 'Provinsi: ' + province.Provinsi;
+                        document.getElementById('confirmed').textContent = 'Confirmed: ' + province.Confirmed;
+                        document.getElementById('recovered').textContent = 'Recovered: ' + province.Recovered;
+                        document.getElementById('deaths').textContent = 'Deaths: ' + province.Deaths;
+                        document.getElementById('active').textContent = 'Active cases: ' + province['Active cases'];
+                        document.getElementById('update').textContent = 'Last Updated: ' + province.updateDate + ' ' + province.updateTime;
+                     });
+                  });
+               }
+            }
+         });
+      </script>
+   </body>
+
+</html>

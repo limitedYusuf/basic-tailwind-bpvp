@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Blog Sederhana</title>
+      <link href="../dist/output.css" rel="stylesheet">
+   </head>
+
+   <body class="bg-gray-100">
+      <!-- Navbar -->
+      <nav class="bg-blue-500 p-4 text-white">
+         <div class="container mx-auto flex justify-between items-center">
+            <!-- Navbar Kanan -->
+            <span class="text-2xl font-semibold">Nama Web</span>
+            <!-- Navbar Kiri -->
+            <ul class="flex space-x-4">
+               <li><a href="#" class="hover:underline">Home</a></li>
+               <li><a href="#" class="hover:underline">About</a></li>
+               <li><a href="#" class="hover:underline">Blog</a></li>
+            </ul>
+         </div>
+      </nav>
+
+      <!-- Konten Blog -->
+      <div class="container mx-auto mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+         <!-- 
+            - 'container': Mengatur lebar kontainer sesuai dengan tata letak grid.
+            - 'mx-auto': Memusatkan kontainer secara horizontal.
+            - 'mt-8': Memberikan margin atas sebesar 2rem (32 piksel).
+            - 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6': Mengatur tata letak grid dengan jumlah kolom yang berbeda-beda pada berbagai ukuran tampilan.
+         -->
+         <!-- Card 1 -->
+         <div class="bg-white p-4 rounded-lg shadow-md">
+            <!-- 
+               - 'bg-white': Mengatur latar belakang elemen dengan warna putih.
+               - 'p-4': Menambahkan padding sebesar 1rem (16 piksel) ke dalam elemen.
+               - 'rounded-lg': Mengatur sudut elemen menjadi lebih bulat.
+               - 'shadow-md': Menambahkan bayangan elemen dengan tingkat kedalaman medium.
+            -->
+            <img
+               src="https://images.unsplash.com/photo-1682687981974-c5ef2111640c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80"
+               alt="Gambar Artikel 1" class="w-full h-50 object-cover rounded">
+            <!-- 
+               - 'w-full': Mengatur lebar gambar agar sesuai dengan lebar elemen.
+               - 'h-50': Mengatur tinggi gambar menjadi setengah tinggi elemen.
+               - 'object-cover': Mengatur gambar agar terpotong jika perlu untuk menyesuaikan ukuran elemen.
+               - 'rounded': Mengatur sudut gambar menjadi lebih bulat.
+            -->
+            <h2 class="text-xl font-semibold mt-4">
+               <!-- 
+                  - 'text-xl': Mengatur ukuran font teks menjadi besar (1.75rem atau 28 piksel).
+                  - 'font-semibold': Mengatur teks menjadi tebal (bold).
+               -->
+               Judul Artikel 1
+            </h2>
+            <p class="text-gray-600 mt-2">
+               <!-- 
+                  - 'text-gray-600': Mengatur warna teks menjadi abu-abu.
+               -->
+               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod justo eu semper.
+            </p>
+            <!-- Tambahan Informasi -->
+            <div class="flex justify-between items-center mt-4 text-gray-500">
+               <span class="text-sm">
+                  <!-- 
+                     - 'text-sm': Mengatur ukuran font teks menjadi kecil (0.875rem atau 14 piksel).
+                  -->
+                  Tanggal Publikasi: 20 Oktober 2023
+               </span>
+               <span class="text-sm">
+                  <!-- 
+                     - 'text-sm': Mengatur ukuran font teks menjadi kecil (0.875rem atau 14 piksel).
+                  -->
+                  Penulis: John Doe
+               </span>
+            </div>
+
+            <div class="flex justify-between items-center mt-2 text-gray-500">
+               <span class="text-sm">
+                  <!-- 
+                     - 'text-sm': Mengatur ukuran font teks menjadi kecil (0.875rem atau 14 piksel).
+                  -->
+                  Kategori: Teknologi
+               </span>
+               <span class="text-sm">
+                  <!-- 
+                     - 'text-sm': Mengatur ukuran font teks menjadi kecil (0.875rem atau 14 piksel).
+                  -->
+                  Waktu Baca: 5 Menit
+               </span>
+            </div>
+
+            <div class="flex justify-between items-center mt-2 text-gray-500">
+               <span class="text-sm">
+                  <!-- 
+                     - 'text-sm': Mengatur ukuran font teks menjadi kecil (0.875rem atau 14 piksel).
+                  -->
+                  Rating: ★★★★☆
+               </span>
+               <span class="text-sm">
+                  <!-- 
+                     - 'text-sm': Mengatur ukuran font teks menjadi kecil (0.875rem atau 14 piksel).
+                  -->
+                  Komentar: 12
+               </span>
+            </div>
+
+            <!-- Tombol Share Sosial -->
+            <div class="mt-4">
+               <span class="text-gray-500 text-sm">
+                  <!-- 
+                     - 'text-gray-500': Mengatur warna teks menjadi abu-abu.
+                     - 'text-sm': Mengatur ukuran font teks menjadi kecil (0.875rem atau 14 piksel).
+                  -->
+                  Bagikan Artikel:
+               </span>
+               <a href="#" class="text-blue-500 hover:underline text-sm ml-2">
+                  <!-- 
+                     - 'text-blue-500': Mengatur warna teks menjadi biru.
+                     - 'hover:underline': Menambahkan garis bawah pada tautan saat dihover.
+                     - 'text-sm': Mengatur ukuran font teks menjadi kecil (0.875rem atau 14 piksel).
+                     - 'ml-2': Menambahkan margin kiri sebesar 0.5rem (8 piksel) ke elemen.
+                  -->
+                  Facebook
+               </a>
+               <a href="#" class="text-blue-500 hover:underline text-sm ml-2">
+                  <!-- 
+                     - 'text-blue-500': Mengatur warna teks menjadi biru.
+                     - 'hover:underline': Menambahkan garis bawah pada tautan saat dihover.
+                     - 'text-sm': Mengatur ukuran font teks menjadi kecil (0.875rem atau 14 piksel).
+                     - 'ml-2': Menambahkan margin kiri sebesar 0.5rem (8 piksel) ke elemen.
+                  -->
+                  Twitter
+               </a>
+               <a href="#" class="text-blue-500 hover:underline text-sm ml-2">
+                  <!-- 
+                     - 'text-blue-500': Mengatur warna teks menjadi biru.
+                     - 'hover:underline': Menambahkan garis bawah pada tautan saat dihover.
+                     - 'text-sm': Mengatur ukuran font teks menjadi kecil (0.875rem atau 14 piksel).
+                     - 'ml-2': Menambahkan margin kiri sebesar 0.5rem (8 piksel) ke elemen.
+                  -->
+                  LinkedIn
+               </a>
+            </div>
+
+            <!-- Label Artikel Terbaru atau Populer -->
+            <div class="mt-4">
+               <span class="text-sm bg-blue-500 text-white px-2 py-1 rounded-full">
+                  <!-- 
+                     - 'text-sm': Mengatur ukuran font teks menjadi kecil (0.875rem atau 14 piksel).
+                     - 'bg-blue-500': Mengatur latar belakang elemen dengan warna biru.
+                     - 'text-white': Mengatur warna teks menjadi putih.
+                     - 'px-2': Menambahkan padding horizontal sebesar 0.5rem (8 piksel).
+                     - 'py-1': Menambahkan padding vertikal sebesar 0.25rem (4 piksel).
+                     - 'rounded-full': Mengatur sudut elemen menjadi sangat bulat.
+                  -->
+                  Terbaru
+               </span>
+            </div>
+
+            <a href="#"
+               class="mt-3 inline-block bg-lime-500 hover:bg-orange-600 text-white font-semibold py-1 px-3 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md mx-auto">
+               <!-- 
+                  - 'mt-3': Menambahkan margin atas sebesar 0.75rem (12 piksel) ke elemen.
+                  - 'inline-block': Mengatur elemen sebagai elemen inline-block.
+                  - 'bg-lime-500': Mengatur latar belakang elemen dengan warna hijau muda.
+                  - 'hover:bg-orange-600': Mengubah warna latar belakang elemen saat dihover menjadi oranye muda.
+                  - 'text-white': Mengatur warna teks menjadi putih.
+                  - 'font-semibold': Mengatur teks menjadi tebal (bold).
+                  - 'py-1': Menambahkan padding vertikal sebesar 0.25rem (4 piksel).
+                  - 'px-3': Menambahkan padding horizontal sebesar 0.75rem (12 piksel).
+                  - 'rounded-lg': Mengatur sudut elemen menjadi agak bulat.
+                  - 'transition duration-300 ease-in-out': Mengatur efek transisi elemen dengan durasi 300ms dan efek ease-in-out.
+                  - 'hover:scale-105': Mengubah skala elemen menjadi 105% saat dihover.
+                  - 'hover:shadow-md': Menambahkan bayangan elemen saat dihover.
+                  - 'mx-auto': Mengatur elemen menjadi berada di tengah secara horizontal.
+               -->
+               Baca Lebih Lanjut
+            </a>
+         </div>
+
+         <!-- Card 2 -->
+         <div class="bg-white p-4 rounded-lg shadow-md text-center">
+            <img
+               src="https://images.unsplash.com/photo-1542451542907-6cf80ff362d6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1521&q=80"
+               alt="Gambar Artikel 2" class="w-full h-50 object-cover rounded">
+            <h2 class="text-xl font-semibold mt-4">Judul Artikel 2</h2>
+            <p class="text-gray-600 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod justo eu
+               semper.</p>
+            <div class="flex justify-between items-center mt-4 text-gray-500">
+               <span class="text-sm">Tanggal Publikasi: 20 Oktober 2023</span>
+               <span class="text-sm">Penulis: John Doe</span>
+            </div>
+
+            <div class="flex justify-between items-center mt-2 text-gray-500">
+               <span class="text-sm">Kategori: Teknologi</span>
+               <span class="text-sm">Waktu Baca: 5 Menit</span>
+            </div>
+
+            <div class="flex justify-between items-center mt-2 text-gray-500">
+               <span class="text-sm">Rating: ★★★★☆</span>
+               <span class="text-sm">Komentar: 12</span>
+            </div>
+
+            <!-- Tombol Share Sosial -->
+            <div class="mt-4">
+               <span class="text-gray-500 text-sm">Bagikan Artikel:</span>
+               <a href="#" class="text-blue-500 hover:underline text-sm ml-2">Facebook</a>
+               <a href="#" class="text-blue-500 hover:underline text-sm ml-2">Twitter</a>
+               <a href="#" class="text-blue-500 hover:underline text-sm ml-2">LinkedIn</a>
+            </div>
+
+            <!-- Label Artikel Terbaru atau Populer -->
+            <div class="mt-4">
+               <span class="text-sm bg-blue-500 text-white px-2 py-1 rounded-full">Terbaru</span>
+            </div>
+
+            <a href="#"
+               class="mt-3 inline-block bg-lime-500 hover:bg-orange-600 text-white font-semibold py-1 px-3 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md mx-auto">
+               Baca Lebih Lanjut
+            </a>
+         </div>
+
+         <!-- Card 3 -->
+         <div class="bg-white p-4 rounded-lg shadow-md text-center">
+            <img
+               src="https://images.unsplash.com/photo-1542370285-b8eb8317691c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1426&q=80"
+               alt="Gambar Artikel 3" class="w-full h-50 object-cover rounded">
+            <h2 class="text-xl font-semibold mt-4">Judul Artikel 3</h2>
+            <p class="text-gray-600 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod justo eu
+               semper.</p>
+            <div class="flex justify-between items-center mt-4 text-gray-500">
+               <span class="text-sm">Tanggal Publikasi: 20 Oktober 2023</span>
+               <span class="text-sm">Penulis: John Doe</span>
+            </div>
+
+            <div class="flex justify-between items-center mt-2 text-gray-500">
+               <span class="text-sm">Kategori: Teknologi</span>
+               <span class="text-sm">Waktu Baca: 5 Menit</span>
+            </div>
+
+            <div class="flex justify-between items-center mt-2 text-gray-500">
+               <span class="text-sm">Rating: ★★★★☆</span>
+               <span class="text-sm">Komentar: 12</span>
+            </div>
+
+            <!-- Tombol Share Sosial -->
+            <div class="mt-4">
+               <span class="text-gray-500 text-sm">Bagikan Artikel:</span>
+               <a href="#" class="text-blue-500 hover:underline text-sm ml-2">Facebook</a>
+               <a href="#" class="text-blue-500 hover:underline text-sm ml-2">Twitter</a>
+               <a href="#" class="text-blue-500 hover:underline text-sm ml-2">LinkedIn</a>
+            </div>
+
+            <!-- Label Artikel Terbaru atau Populer -->
+            <div class="mt-4">
+               <span class="text-sm bg-blue-500 text-white px-2 py-1 rounded-full">Terbaru</span>
+            </div>
+
+            <a href="#"
+               class="mt-3 inline-block bg-lime-500 hover:bg-orange-600 text-white font-semibold py-1 px-3 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md mx-auto">
+               Baca Lebih Lanjut
+            </a>
+         </div>
+      </div>
+   </body>
+
+</html>

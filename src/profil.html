@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Profil Saya</title>
+      <link href="../dist/output.css" rel="stylesheet">
+   </head>
+
+   <body class="bg-gray-100 flex flex-col min-h-screen">
+      <!-- 
+         - 'bg-gray-100': Mengatur latar belakang (background) dengan warna abu-abu muda.
+         - 'flex flex-col': Menggunakan Flexbox dengan orientasi kolom untuk mengatur layout.
+         - 'min-h-screen': Menjamin bahwa konten mencakup setidaknya seluruh tinggi layar (mencegah footer naik).
+      -->
+
+      <!-- Header -->
+      <header class="bg-blue-500 p-4 text-white">
+         <div class="container mx-auto">
+            <!-- 
+               - 'bg-blue-500': Mengatur latar belakang header dengan warna biru.
+               - 'p-4': Menambahkan padding sebesar 1rem (16 piksel) ke dalam header.
+               - 'text-white': Mengatur warna teks header menjadi putih.
+            -->
+            <h1 class="text-3xl font-semibold">
+               <!-- 
+                  - 'text-3xl': Mengatur ukuran font teks menjadi sangat besar (2rem atau 32 piksel).
+                  - 'font-semibold': Mengatur teks menjadi tebal (bold).
+               -->
+               Profil Saya
+            </h1>
+         </div>
+      </header>
+
+      <!-- Konten -->
+      <div class="container mx-auto mt-8 mb-8 p-4 bg-white rounded-lg shadow-lg flex-grow flex items-center">
+         <!-- 
+            - 'container mx-auto': Mengatur konten agar berada di tengah dan memiliki margin sisi horizontal otomatis.
+            - 'mt-8': Menambahkan margin atas sebesar 2rem (32 piksel).
+            - 'mb-8': Menambahkan margin bawah sebesar 2rem (32 piksel).
+            - 'p-4': Menambahkan padding sebesar 1rem (16 piksel) ke dalam konten.
+            - 'bg-white': Mengatur latar belakang konten dengan warna putih.
+            - 'rounded-lg': Memberikan sudut elemen konten yang sedikit melengkung.
+            - 'shadow-lg': Menambahkan bayangan (shadow) dengan tingkat kejelasan yang lebih tinggi.
+            - 'flex-grow': Memastikan konten mengisi ruang kosong dan mendorong footer ke bagian bawah.
+            - 'flex items-center': Menggunakan Flexbox untuk mengatur konten agar berada di tengah secara vertikal.
+         -->
+
+         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Foto Profil -->
+            <div class="flex justify-center">
+               <!-- 
+                  - 'flex justify-center': Mengatur agar konten berada di tengah secara horizontal.
+               -->
+               <img
+                  src="https://thumbs.dreamstime.com/b/transparent-pattern-background-simulation-alpha-channel-png-seamless-gray-white-squares-vector-design-grid-162521286.jpg"
+                  alt="Foto Profil" class="w-64 h-64 rounded-full object-cover">
+               <!-- 
+                  - 'w-64 h-64': Mengatur lebar dan tinggi gambar menjadi 64 piksel.
+                  - 'rounded-full': Mengatur sudut gambar menjadi bulat.
+                  - 'object-cover': Memastikan gambar sesuai dan tidak terdistorsi dalam lingkup yang diberikan.
+               -->
+            </div>
+
+            <!-- Informasi Profil -->
+            <div>
+               <h2 class="text-2xl font-semibold">
+                  <!-- 
+                     - 'text-2xl': Mengatur ukuran font teks menjadi besar (1.5rem atau 24 piksel).
+                     - 'font-semibold': Mengatur teks menjadi tebal (bold).
+                  -->
+                  Limited Yusuf
+               </h2>
+               <p class="text-gray-600">
+                  <!-- 
+                     - 'text-gray-600': Mengatur warna teks menjadi abu-abu.
+                  -->
+                  Beban BPVP
+               </p>
+               <p class="mt-4 text-justify">
+                  <!-- 
+                     - 'mt-4': Menambahkan margin atas sebesar 1rem (16 piksel).
+                     - 'text-justify': Mengatur teks menjadi rata kiri dan kanan (justifikasi).
+                  -->
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt deleniti aperiam culpa asperiores inventore quisquam? Ducimus nihil atque similique doloremque sed optio dolore officia laboriosam blanditiis dolorem tempore nesciunt vitae, suscipit incidunt voluptatem quas perspiciatis esse nobis, vel officiis fugit ipsam repudiandae ut! Mollitia rem iste recusandae, qui natus commodi minima sint quam! Aut eligendi, recusandae eveniet voluptates doloribus earum! At dolore iure repudiandae! Ex quo sit eius suscipit consectetur. Et eius, quae quod consequuntur qui molestias quis iure, nobis aperiam, ipsam harum? Tempora quo alias optio. Atque officia error, facilis, mollitia placeat nesciunt rerum eum aperiam laboriosam, asperiores doloremque?
+               </p>
+            </div>
+         </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="bg-gray-200 p-4 text-gray-700 text-center">
+         <div class="container mx-auto">
+            <!-- 
+               - 'bg-gray-200': Mengatur latar belakang footer dengan warna abu-abu muda.
+               - 'p-4': Menambahkan padding sebesar 1rem (16 piksel) ke dalam footer.
+               - 'text-gray-700': Mengatur warna teks footer menjadi abu-abu gelap.
+               - 'text-center': Mengatur teks footer menjadi rata tengah.
+            -->
+            &copy; 2023 Profil Saya
+         </div>
+      </footer>
+   </body>
+
+</html>

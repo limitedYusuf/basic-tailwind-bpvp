@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Dark Mode Switch</title>
+      <link href="../dist/output.css" rel="stylesheet">
+   </head>
+
+   <body class="bg-white dark:bg-gray-900 dark:text-white">
+      <!-- Konten utama -->
+      <div class="container mx-auto p-4">
+         <!-- Header -->
+         <header class="bg-blue-500 p-4 text-white">
+            <h1 class="text-3xl font-semibold">
+               <!-- 
+                  - 'bg-blue-500': Mengatur latar belakang header dengan warna biru.
+                  - 'p-4': Menambahkan padding sebesar 1rem (16 piksel) ke dalam header.
+                  - 'text-white': Mengatur warna teks header menjadi putih.
+               -->
+               Dark Mode Switch
+            </h1>
+         </header>
+
+         <!-- Toggle Dark Mode -->
+         <div class="mt-4">
+            <!-- Label untuk Dark Mode -->
+            <label for="darkModeSwitch" class="text-gray-700 dark:text-gray-300">
+               <!-- 
+                  - 'text-gray-700': Mengatur warna teks label menjadi abu-abu gelap.
+                  - 'dark:text-gray-300': Mengatur warna teks label dalam mode gelap menjadi abu-abu terang.
+               -->
+               Dark Mode:
+            </label>
+         
+            <!-- Kontainer Tombol Pemutaran Dark Mode -->
+            <div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+               <!-- 
+                  - 'relative': Membuat konten di dalamnya menggunakan koordinat relatif terhadap kontainer induknya.
+                  - 'inline-block': Mengatur elemen agar tampil dalam satu baris dan mengikuti kontennya.
+                  - 'w-10': Mengatur lebar elemen menjadi 10 unit (biasanya dalam satuan piksel).
+                  - 'mr-2': Menambahkan margin sebesar 2 unit di sisi kanan elemen.
+                  - 'align-middle': Mengatur elemen agar vertikalnya berada di tengah.
+                  - 'select-none': Mencegah teks yang ada di dalam elemen ini terpilih secara default.
+                  - 'transition duration-200 ease-in': Mengatur transisi perubahan dengan durasi 200 milidetik dan efek transisi masuk yang halus.
+               -->
+         
+               <!-- Tombol Pemutaran Dark Mode -->
+               <input type="checkbox" id="darkModeSwitch" name="darkModeSwitch"
+                  class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer">
+               <!-- 
+                  - 'toggle-checkbox': Kode ini mengacu pada styling khusus untuk checkbox dalam mode gelap.
+                  - 'absolute': Mengatur elemen ini dalam posisi absolut terhadap elemen yang berada di dalam kontainer relatifnya.
+                  - 'block': Mengatur elemen ini agar menjadi blok, sehingga akan tampil dalam satu baris.
+                  - 'w-6 h-6': Mengatur lebar dan tinggi elemen menjadi 6 unit.
+                  - 'rounded-full': Mengatur sudut elemen menjadi melengkung sehingga tampak seperti lingkaran.
+                  - 'bg-white': Mengatur latar belakang elemen menjadi putih.
+                  - 'border-4': Menambahkan border dengan lebar 4 unit.
+                  - 'appearance-none': Menghilangkan styling bawaan browser untuk checkbox.
+                  - 'cursor-pointer': Mengubah kursor saat mengarah ke elemen ini menjadi pointer.
+               -->
+         
+               <!-- Label Kustom untuk Tombol Pemutaran Dark Mode -->
+               <label for="darkModeSwitch"
+                  class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer dark:bg-gray-300">
+                  <!-- 
+                     - 'toggle-label': Kode ini mengacu pada styling khusus untuk label checkbox dalam mode gelap.
+                     - 'block': Mengatur elemen ini agar menjadi blok.
+                     - 'overflow-hidden': Mengatur elemen ini agar kontennya yang berlebihan terpotong.
+                     - 'h-6': Mengatur tinggi elemen menjadi 6 unit.
+                     - 'rounded-full': Mengatur sudut elemen menjadi melengkung sehingga tampak seperti lingkaran.
+                     - 'bg-gray-300': Mengatur latar belakang elemen menjadi abu-abu terang.
+                     - 'cursor-pointer': Mengubah kursor saat mengarah ke elemen ini menjadi pointer.
+                     - 'dark:bg-gray-300': Mengatur latar belakang elemen dalam mode gelap menjadi abu-abu terang.
+                  -->
+               </label>
+            </div>
+         
+            <!-- Teks Status Dark Mode -->
+            <span id="darkModeText" class="text-gray-700 dark:text-gray-300">
+               <!-- 
+                  - 'text-gray-700': Mengatur warna teks status menjadi abu-abu gelap.
+                  - 'dark:text-gray-300': Mengatur warna teks status dalam mode gelap menjadi abu-abu terang.
+               -->
+               Off
+            </span>
+         </div>
+
+         <!-- Grid Kolom -->
+         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+            <!-- Kolom 1 -->
+            <div class="bg-white p-4 rounded shadow-md dark:bg-gray-800 dark:text-gray-200">
+               <h2 class="text-xl font-semibold mb-2">
+                  <!-- 
+                     - 'bg-white': Mengatur latar belakang kolom dengan warna putih.
+                     - 'p-4': Menambahkan padding sebesar 1rem (16 piksel) ke dalam kolom.
+                     - 'rounded': Mengatur sudut kolom menjadi melengkung.
+                     - 'shadow-md': Menambahkan bayangan pada kolom.
+                     - 'dark:bg-gray-800': Mengatur latar belakang kolom dalam mode gelap dengan warna abu-abu.
+                     - 'dark:text-gray-200': Mengatur warna teks dalam mode gelap menjadi abu-abu terang.
+                  -->
+                  Kolom 1
+               </h2>
+               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <!-- Kolom 2 dan 3 disingkat untuk keperluan contoh -->
+            <div class="bg-white p-4 rounded shadow-md dark:bg-gray-800 dark:text-gray-200">
+               <h2 class="text-xl font-semibold mb-2">
+                  <!-- 
+                     Sama dengan penjelasan Kolom 1 di atas.
+                  -->
+                  Kolom 2
+               </h2>
+               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="bg-white p-4 rounded shadow-md dark:bg-gray-800 dark:text-gray-200">
+               <h2 class="text-xl font-semibold mb-2">
+                  <!-- 
+                     Sama dengan penjelasan Kolom 1 di atas.
+                  -->
+                  Kolom 3
+               </h2>
+               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+         </div>
+      </div>
+
+      <!-- JavaScript untuk Dark Mode -->
+      <script>
+         const darkModeSwitch = document.getElementById('darkModeSwitch');
+         const darkModeText = document.getElementById('darkModeText');
+         const body = document.body;
+         const html = document.documentElement;
+
+         darkModeSwitch.addEventListener('change', () => {
+            if (darkModeSwitch.checked) {
+               // Aktifkan mode gelap
+               html.classList.add('dark');  // Menambahkan kelas 'dark' ke elemen HTML
+               html.classList.remove('light');  // Menghapus kelas 'light' dari elemen HTML
+               body.classList.add('dark');  // Menambahkan kelas 'dark' ke elemen <body>
+               darkModeText.textContent = 'On';  // Mengganti teks menjadi 'On'
+            } else {
+               // Aktifkan mode terang
+               html.classList.remove('dark');  // Menghapus kelas 'dark' dari elemen HTML
+               html.classList.add('light');  // Menambahkan kelas 'light' ke elemen HTML
+               body.classList.remove('dark');  // Menghapus kelas 'dark' dari elemen <body>
+               darkModeText.textContent = 'Off';  // Mengganti teks menjadi 'Off'
+            }
+         });
+      </script>
+   </body>
+
+</html>
